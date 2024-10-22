@@ -7,7 +7,7 @@ public:
     T data;
     ListNode* next;
 
-    ListNode(const T& data) : data(data), next(nullptr) {}
+    ListNode(const T& data): data(data), next(nullptr) {}
 };
 
 template <typename T>
@@ -16,7 +16,7 @@ private:
     ListNode<T>* head;
 
 public:
-    LinkedList() : head(nullptr) {}
+    LinkedList(): head(nullptr) {}
 
     void insert(const T& data) {
         ListNode<T>* newNode = new ListNode<T>(data);
@@ -47,7 +47,7 @@ public:
     void display() const {
         ListNode<T>* temp = head;
         while (temp != nullptr) {
-            std::cout << temp->data << std::endl;
+            cout << temp->data << endl;
             temp = temp->next;
         }
     }
