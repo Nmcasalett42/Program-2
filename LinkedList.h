@@ -1,6 +1,8 @@
 #ifndef LinkedList_H
 //define not work??
 
+using namespace std;
+
 template <typename T>
 class ListNode {
 public:
