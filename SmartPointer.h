@@ -21,7 +21,8 @@ public:
     // Assignment operator that makes a deep copy
     SmartPointer& operator=(const SmartPointer& other) 
     {
-        if (this != &other) {
+        if (this != &other) 
+        {
             delete pointer;
             pointer = new T(*other.pointer);
         }

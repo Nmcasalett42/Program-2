@@ -52,7 +52,8 @@ public:
         ListNode<T>* temp = head;
         ListNode<T>* prev = nullptr;
 
-        while (temp != nullptr && !(temp->data == data)) {
+        while (temp != nullptr && !(temp->data == data)) 
+        {
             prev = temp;
             temp = temp->next;
         }
@@ -67,7 +68,8 @@ public:
     void display() const 
     {
         ListNode<T>* temp = head;
-        while (temp != nullptr) {
+        while (temp != nullptr) 
+        {
             cout << temp->data << endl;
             temp = temp->next;
         }
@@ -77,7 +79,8 @@ public:
     void sortDescending() { sort(false, [](const T& a, const T& b) { return a < b; }); }
     void sortCustom(function<bool(const T&, const T&)> compare) { sort(true, compare); }
 
-    ~LinkedList() {
+    ~LinkedList() 
+    {
         ListNode<T>* temp;
         while (head != nullptr) {
             temp = head;
