@@ -3,7 +3,8 @@
 
 using namespace std;
 
-class Vehicle {
+class Vehicle 
+{
 private:
     string licensePlate;
     string make;
@@ -23,7 +24,7 @@ public:
     bool operator<(const Vehicle& other) const;
     bool operator>(const Vehicle& other) const;
     bool operator==(const Vehicle& other) const;
-    friend std::ostream& operator<<(std::ostream& os, const Vehicle& v) 
+    friend ostream& operator<<(ostream& os, const Vehicle& v) 
     {
         os << "Vehicle License Plate: " << v.licensePlate << ", Make: " << v.make << ", Model: " << v.model << "]";
         return os;

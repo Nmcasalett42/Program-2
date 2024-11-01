@@ -3,7 +3,8 @@
 #include "Vehicle.h"
 
 template <typename T>
-class Storage {
+class Storage 
+{
 private:
     LinkedList<T> vehicles;
 

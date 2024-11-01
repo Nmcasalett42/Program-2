@@ -8,7 +8,8 @@
 #include "ParkingLotManager.h"
 #include "SmartPointer.h"
 
-int main() {
+int main() 
+{
     ParkingLotManager manager;
 
     // Create vehicles
@@ -38,7 +39,8 @@ int main() {
 
     // Custom sort by make and model
     cout << "\nCustom sorted vehicles (by make):" << endl;
-    lot1.getLinkedList().sortCustom([](const Vehicle& a, const Vehicle& b) {
+    lot1.getLinkedList().sortCustom([](const Vehicle& a, const Vehicle& b) 
+    {
         return a.getMake() < b.getMake();
     });
     lot1.displayVehicles();

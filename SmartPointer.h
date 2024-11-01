@@ -1,7 +1,8 @@
 #pragma once
 
 template <typename T>
-class SmartPointer {
+class SmartPointer 
+{
 private:
     T* pointer;
 
@@ -10,12 +11,14 @@ public:
     SmartPointer(T* ptr = nullptr) : pointer(ptr) {}
 
     // Copy constructor that makes a deep copy
-    SmartPointer(const SmartPointer& other) {
+    SmartPointer(const SmartPointer& other) 
+    {
         pointer = new T(*other.pointer);
     }
 
     // Assignment operator that makes a deep copy
-    SmartPointer& operator=(const SmartPointer& other) {
+    SmartPointer& operator=(const SmartPointer& other) 
+    {
         if (this != &other) {
             delete pointer;
             pointer = new T(*other.pointer);
@@ -24,13 +27,16 @@ public:
     }
 
     // Move constructor
-    SmartPointer(SmartPointer&& other) noexcept : pointer(other.pointer) {
+    SmartPointer(SmartPointer&& other) noexcept : pointer(other.pointer) 
+    {
         other.pointer = nullptr;
     }
 
     // Move assignment operator
-    SmartPointer& operator=(SmartPointer&& other) noexcept {
-        if (this != &other) {
+    SmartPointer& operator=(SmartPointer&& other) noexcept 
+    {
+        if (this != &other) 
+        {
             delete pointer;
             pointer = other.pointer;
             other.pointer = nullptr;
@@ -39,7 +45,8 @@ public:
     }
 
     // Destructor
-    ~SmartPointer() {
+    ~SmartPointer() 
+    {
         delete pointer;
     }
 

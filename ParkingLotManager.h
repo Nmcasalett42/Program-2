@@ -3,10 +3,11 @@
 #include "Storage.h"
 #include "Vehicle.h"
 
-class ParkingLotManager {
+class ParkingLotManager 
+{
 private:
-    LinkedList<Storage<Vehicle>> parkingLots;
-    LinkedList<LinkedList<Storage<Vehicle>>> parkingGarages;
+    LinkedList<Storage<Vehicle >> parkingLots;
+    LinkedList<LinkedList<Storage<Vehicle> >> parkingGarages;
 
 public:
     // Add a new parking lot
@@ -16,8 +17,9 @@ public:
     void removeParkingLot(const Storage<Vehicle>& lot) { parkingLots.remove(lot); }
 
     // Display all parking lots
-    void displayParkingLots() const {
-        std::cout << "Displaying all parking lots:" << std::endl;
+    void displayParkingLots() const 
+    {
+        cout << "Displaying all parking lots:" << endl;
         parkingLots.display();
     }
 
@@ -28,8 +30,9 @@ public:
     void removeParkingGarage(const LinkedList<Storage<Vehicle>>& garage) { parkingGarages.remove(garage); }
 
     // Display all parking garages
-    void displayParkingGarages() const {
-        std::cout << "Displaying all parking garages:" << std::endl;
+    void displayParkingGarages() const 
+    {
+        cout << "Displaying all parking garages:" << endl;
         parkingGarages.display();
     }
 };
