@@ -23,5 +23,9 @@ public:
     bool operator<(const Vehicle& other) const;
     bool operator>(const Vehicle& other) const;
     bool operator==(const Vehicle& other) const;
-    friend ostream& operator<<(ostream& os, const Vehicle& v);
+    friend std::ostream& operator<<(std::ostream& os, const Vehicle& v) 
+    {
+        os << "Vehicle License Plate: " << v.licensePlate << ", Make: " << v.make << ", Model: " << v.model << "]";
+        return os;
+    }
 };

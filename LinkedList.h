@@ -1,5 +1,4 @@
-#ifndef LinkedList_H
-//define not work??
+#include <iostream>
 
 template <typename T>
 class ListNode {
@@ -7,7 +6,7 @@ public:
     T data;
     ListNode* next;
 
-    ListNode(const T& data): data(data), next(nullptr) {}
+    ListNode(const T& data) : data(data), next(nullptr) {}
 };
 
 template <typename T>
@@ -16,7 +15,7 @@ private:
     ListNode<T>* head;
 
 public:
-    LinkedList(): head(nullptr) {}
+    LinkedList() : head(nullptr) {}
 
     void insert(const T& data) {
         ListNode<T>* newNode = new ListNode<T>(data);
@@ -28,18 +27,14 @@ public:
         ListNode<T>* temp = head;
         ListNode<T>* prev = nullptr;
 
-        while (temp != nullptr && temp->data != data) {
+        while (temp != nullptr && !(temp->data == data)) {
             prev = temp;
             temp = temp->next;
         }
 
-        if (temp == nullptr) return; // Data not found
-        if (prev == nullptr) {
-            head = temp->next;
-        }
-        else {
-            prev->next = temp->next;
-        }
+        if (temp == nullptr) return;
+        if (prev == nullptr) head = temp->next;
+        else prev->next = temp->next;
 
         delete temp;
     }
@@ -47,10 +42,12 @@ public:
     void display() const {
         ListNode<T>* temp = head;
         while (temp != nullptr) {
-            cout << temp->data << endl;
+            std::cout << temp->data << std::endl;
             temp = temp->next;
         }
     }
+
+    bool isEmpty() const { return head == nullptr; }
 
     ~LinkedList() {
         ListNode<T>* temp;
@@ -61,5 +58,3 @@ public:
         }
     }
 };
-
-#endif
