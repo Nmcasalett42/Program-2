@@ -2,6 +2,8 @@
 #include <iostream>
 #include <functional>
 
+using namespace std;
+
 template <typename T>
 class ListNode 
 {

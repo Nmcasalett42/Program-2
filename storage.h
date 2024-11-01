@@ -2,6 +2,8 @@
 #include "LinkedList.h"
 #include "Vehicle.h"
 
+using namespace std;
+
 template <typename T>
 class Storage 
 {

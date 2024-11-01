@@ -8,6 +8,8 @@
 #include "ParkingLotManager.h"
 #include "SmartPointer.h"
 
+using namespace std;
+
 int main() 
 {
     ParkingLotManager manager;

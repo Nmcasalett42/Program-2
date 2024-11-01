@@ -3,6 +3,8 @@
 #include "Storage.h"
 #include "Vehicle.h"
 
+using namespace std;
+
 class ParkingLotManager 
 {
 private:
