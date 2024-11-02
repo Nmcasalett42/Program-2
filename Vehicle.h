@@ -1,4 +1,6 @@
-#pragma once
+#ifndef VEHICLE_H
+#define VEHICLE_H
+
 #include <iostream>
 #include <string>
 
@@ -31,3 +33,4 @@ public:
         return os;
     }
 };
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SMARTPOINTER_H
+#define SMARTPOINTER_H
 
 using namespace std;
 
@@ -63,3 +64,4 @@ public:
     bool operator==(const SmartPointer& other) const { return *pointer == *other.pointer; }
     bool operator!=(const SmartPointer& other) const { return !(*this == other); }
 };
+#endif

@@ -1,4 +1,6 @@
-#pragma once
+#ifndef PARKINGLOTMANAGER_H
+#define PARKINGLOTMANAGER_H
+
 #include "LinkedList.h"
 #include "Storage.h"
 #include "Vehicle.h"
@@ -38,3 +40,4 @@ public:
         parkingGarages.display();
     }
 };
+#endif 

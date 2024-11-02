@@ -1,4 +1,6 @@
-#pragma once
+#ifndef STORAGE_H
+#define STORAGE_H
+
 #include "LinkedList.h"
 #include "Vehicle.h"
 
@@ -19,3 +21,4 @@ public:
     // Provide access to the underlying LinkedList for sorting
     LinkedList<T>& getLinkedList() { return vehicles; }
 };
+#endif
