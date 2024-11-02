@@ -3,41 +3,39 @@
 
 #include "LinkedList.h"
 #include "Storage.h"
+#include "ParkingGarage.h"
 #include "Vehicle.h"
+#include <iostream>
 
 using namespace std;
 
-class ParkingLotManager 
-{
+class ParkingLotManager {
 private:
-    LinkedList<Storage<Vehicle >> parkingLots;
-    LinkedList<LinkedList<Storage<Vehicle> >> parkingGarages;
+    LinkedList<Storage<Vehicle>> parkingLots;
+    ParkingGarage parkingGarage;
 
 public:
-    // Add a new parking lot
-    void addParkingLot(const Storage<Vehicle>& lot) { parkingLots.insert(lot); }
+    //adds lot to the manager and garage
+    void addParkingLot(const Storage<Vehicle>& lot) {
+        parkingLots.insert(lot);
+        parkingGarage.addParkingLot(lot);
+    }
 
-    // Remove an existing parking lot
-    void removeParkingLot(const Storage<Vehicle>& lot) { parkingLots.remove(lot); }
+    //removes lot from manager and garage
+    void removeParkingLot(const Storage<Vehicle>& lot) {
+        parkingLots.remove(lot);
+        parkingGarage.removeParkingLot(lot);
+    }
 
-    // Display all parking lots
-    void displayParkingLots() const 
-    {
+    //shows all lots managed by manager
+    void displayParkingLots() const {
         cout << "Displaying all parking lots:" << endl;
         parkingLots.display();
     }
 
-    // Add a new parking garage
-    void addParkingGarage(const LinkedList<Storage<Vehicle>>& garage) { parkingGarages.insert(garage); }
-
-    // Remove a parking garage
-    void removeParkingGarage(const LinkedList<Storage<Vehicle>>& garage) { parkingGarages.remove(garage); }
-
-    // Display all parking garages
-    void displayParkingGarages() const 
-    {
-        cout << "Displaying all parking garages:" << endl;
-        parkingGarages.display();
+    //shows all lots in garage
+    void displayParkingGarage() const {
+        parkingGarage.displayGarage();
     }
 };
-#endif 
+#endif

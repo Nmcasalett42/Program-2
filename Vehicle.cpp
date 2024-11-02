@@ -2,6 +2,6 @@
 
 using namespace std;
 
-//reworked 
+//constructor for Vehicle Class...PARAMETERIZED
 Vehicle::Vehicle(string license, string make, string model)
     : licensePlate(license), make(make), model(model) {}
